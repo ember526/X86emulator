@@ -1,0 +1,331 @@
+[1;34m[src/monitor/monitor.c,54,load_default_img] No image is given. Use the default build-in image.[0m
+[1;34m[src/monitor/monitor.c,28,welcome] Debug: [1;32mON[0m[0m
+[1;34m[src/monitor/monitor.c,31,welcome] If debug mode is on, A log file will be generated to record every instruction NEMU executes. This may lead to a large log file. If it is not necessary, you can turn it off in include/common.h.[0m
+[1;34m[src/monitor/monitor.c,36,welcome] Build time: 10:41:53, Dec 14 2018[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 0 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 1 with len 4: 1372[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 5 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 6 with len 4: 2080[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 10 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 11 with len 3: 748[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 14 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 15 with len 2: 45[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 17 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 18 with len 4: 2098[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 22 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 23 with len 4: 3714[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 27 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 29 with len 4: 1630[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 33 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 34 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 35 with len 4: 4229[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 39 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 40 with len 3: 493[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 43 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 44 with len 3: 756[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 47 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 48 with len 3: 576[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 51 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 52 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 53 with len 3: 627[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 56 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 57 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 58 with len 4: 2727[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 62 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 63 with len 4: 3524[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : &&[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 3: 803[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 3 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 4 with len 4: 2708[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 4: 3465[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 0 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 1 with len 4: 3988[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 5 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 6 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 7 with len 4: 2970[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 4: 3393[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 4 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 6 with len 4: 4149[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 10 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 11 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 12 with len 3: 332[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 15 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 16 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 17 with len 1: 6[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 18 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 20 with len 4: 2708[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 24 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 25 with len 4: 3995[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 29 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 30 with len 4: 1574[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 34 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 35 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 36 with len 2: 39[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 38 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 39 with len 3: 379[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 42 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 43 with len 4: 3349[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 47 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 49 with len 4: 2959[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 53 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 54 with len 4: 4744[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 58 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 59 with len 4: 1428[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 63 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 64 with len 4: 3740[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 68 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 69 with len 3: 131[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 72 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 73 with len 4: 1398[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 77 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 78 with len 4: 3288[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 82 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 83 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 84 with len 4: 3791[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 88 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 89 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 90 with len 4: 4170[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 94 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 95 with len 4: 2520[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 99 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 100 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 101 with len 3: 626[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[8] = "==" at position 104 with len 2: ==[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 106 with len 4: 2795[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 110 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 111 with len 4: 4980[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 115 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 116 with len 4: 4103[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[8] = "==" at position 120 with len 2: ==[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 122 with len 4: 2286[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 126 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 127 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 128 with len 4: 4463[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 132 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 134 with len 4: 3215[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 138 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 139 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 140 with len 4: 3358[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : &&[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : ==[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : ==[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 3: 361[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[8] = "==" at position 3 with len 2: ==[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 5 with len 3: 684[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 8 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 9 with len 4: 4904[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : ==[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 4: 2935[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 4 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 5 with len 4: 2082[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 3: 514[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 3 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 4 with len 4: 4962[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 8 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 9 with len 3: 893[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 0 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 1 with len 4: 3223[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 5 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 6 with len 3: 193[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 9 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 10 with len 3: 734[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 13 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 14 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 15 with len 4: 1096[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 19 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 20 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 21 with len 3: 178[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 24 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 25 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 26 with len 4: 4762[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 30 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 31 with len 4: 2272[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 35 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 36 with len 4: 4138[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 40 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 41 with len 3: 452[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 44 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 45 with len 4: 1346[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 49 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 50 with len 2: 46[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 52 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 53 with len 4: 1115[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 57 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 58 with len 2: 19[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 60 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 62 with len 4: 2944[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 66 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 67 with len 4: 1075[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 71 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 72 with len 4: 4111[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 76 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 77 with len 4: 4315[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : &&[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 0 with len 4: 4317[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 4 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 5 with len 4: 2661[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 9 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 11 with len 4: 4876[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 15 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 16 with len 4: 3247[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 20 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 21 with len 4: 4944[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 25 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 27 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 28 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 29 with len 4: 3946[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 33 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 34 with len 4: 1890[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 38 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 39 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 40 with len 4: 4318[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 44 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 46 with len 4: 3429[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 50 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 51 with len 4: 4096[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 55 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 56 with len 1: 9[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 57 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 58 with len 4: 2186[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 62 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 63 with len 4: 4984[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 67 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 68 with len 2: 36[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 70 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 71 with len 3: 410[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 74 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 75 with len 4: 3312[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 79 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 80 with len 3: 652[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[5] = "/" at position 83 with len 1: /[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 84 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 85 with len 4: 2506[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 89 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 91 with len 4: 2286[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[8] = "==" at position 95 with len 2: ==[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 97 with len 4: 1383[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 101 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 102 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 103 with len 4: 3557[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 107 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 108 with len 3: 743[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 111 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 112 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 113 with len 4: 2079[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 117 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 118 with len 4: 2031[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 122 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 123 with len 4: 2441[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 127 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 128 with len 4: 2106[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 132 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[6] = "\(" at position 133 with len 1: ([0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 134 with len 4: 3280[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[4] = "-" at position 138 with len 1: -[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 139 with len 3: 785[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 142 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 143 with len 4: 3072[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 147 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 149 with len 4: 4455[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 153 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 154 with len 4: 4364[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 158 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 159 with len 3: 107[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[10] = "&&" at position 162 with len 2: &&[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 164 with len 4: 3539[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[3] = "\*" at position 168 with len 1: *[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 169 with len 1: 6[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[7] = "\)" at position 170 with len 1: )[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 171 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 173 with len 4: 4363[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 177 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 178 with len 4: 1469[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[2] = "\+" at position 182 with len 1: +[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 183 with len 3: 579[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[9] = "!=" at position 186 with len 2: !=[0m
+[1;34m[src/monitor/debug/expr.c,85,make_token] match rules[0] = "[0-9]+" at position 188 with len 4: 3368[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : &&[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : !=[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : -[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : +[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : *[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : /[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : &&[0m
+[1;34m[src/monitor/debug/expr.c,194,eval] Primiary_operator : ==[0m
