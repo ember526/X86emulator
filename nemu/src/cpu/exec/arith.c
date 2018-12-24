@@ -1,37 +1,120 @@
 #include "cpu/exec.h"
 
 make_EHelper(add) {
-  TODO();
+  //opcode : 
+  //0x01=>Ev,Gv
+  //0x03=>Gv,Ev 
+  int dest_olds  = id_dest->val >> (id_dest->width*8 - 1); 
+  int  src_s  = id_src->val >> (id_src->width*8 - 1);
 
+  if(decoding.opcode==0x83)
+    rtl_sext(&id_src->val, &id_src->val, id_src->width); 
+
+  rtl_add(&id_dest->val, &id_dest->val, &id_src->val);
+  operand_write(id_dest, &id_dest->val);
+
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
+  rtlreg_t tcf =  (dest_olds && src_s && cpu.SF)  || ((dest_olds ^ src_s) ^ cpu.SF); //111
+  rtlreg_t tof = (dest_olds && src_s && !cpu.SF)  || (!dest_olds && !src_s && cpu.SF); //110 001
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
   print_asm_template2(add);
 }
 
 make_EHelper(sub) {
-  TODO();
-
+  //opcode : 
+  //0x29  Ev<-Gv
+  //0x2b  Gv<-Ev
+  rtlreg_t tcf = (unsigned)id_dest->val < (unsigned)id_src->val;
+  int dest_s  = id_dest->val >> (id_dest->width*8 - 1); 
+  int  src_s  = id_src->val >> (id_src->width*8 - 1); 
+  if(decoding.opcode==0x83)
+    rtl_sext(&id_src->val, &id_src->val, id_src->width);
+  rtl_sub(&id_dest->val, &id_dest->val, &id_src->val);
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
+  rtlreg_t tof = (!dest_s && src_s && cpu.SF) || (dest_s && !src_s && !cpu.SF); //011 100
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
+  operand_write(id_dest, &id_dest->val);
+ // }
+  //else
+  //  TODO();
+  //printf("after sub dest_var %x / s-imm %d\n", id_dest->val, id_src->simm);
   print_asm_template2(sub);
 }
 
 make_EHelper(cmp) {
-  TODO();
-
+  //opcode : 
+  //0x39   Ev <- Gv
+  //0x3c   al <- Ib
+  //0x3d   eAX <- Iv
+  //0x38   Eb <- Gb 
+  if(decoding.opcode==0x83)
+    rtl_sext(&id_src->val, &id_src->val, id_src->width); 
+  rtlreg_t tcf = (unsigned)id_dest->val < (unsigned)id_src->val;
+  int dest_s  = id_dest->val >> (id_dest->width*8 - 1); 
+  int  src_s  = id_src->val >> (id_src->width*8 - 1); 
+  rtl_sub(&id_dest->val, &id_dest->val, &id_src->val);
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
+  rtlreg_t tof = (!dest_s && src_s && cpu.SF) || (dest_s && !src_s && !cpu.SF); //011 100
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
+  //Log("Attention!%d!%d!%d!", id_src->val, id_dest->val, cpu.ZF);
+  
   print_asm_template2(cmp);
 }
 
 make_EHelper(inc) {
-  TODO();
+  //opcode : 
+  //0xfe  Eb
+  //0x48-0x4f +rb/w
+  //0xff  Ev
+  rtlreg_t tcf = (unsigned)id_dest->val < (unsigned)id_src->val;
+  int dest_s  = id_dest->val >> (id_dest->width*8 - 1); 
+  int  src_s  = id_src->val >> (id_src->width*8 - 1); 
+  
+  rtlreg_t t0 = 1;
+  rtl_add(&id_dest->val, &id_dest->val, &t0);
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
 
-  print_asm_template1(inc);
+  rtlreg_t tof = (!dest_s && src_s && cpu.SF) || (dest_s && !src_s && !cpu.SF); //011 100
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
+  operand_write(id_dest, &id_dest->val);
 }
 
 make_EHelper(dec) {
-  TODO();
+  //opcode : 
+  //0xfe  Eb
+  //0x40-0x47 +rb/w
+  rtlreg_t tcf = (unsigned)id_dest->val < (unsigned)id_src->val;
+  int dest_s  = id_dest->val >> (id_dest->width*8 - 1); 
+  int  src_s  = id_src->val >> (id_src->width*8 - 1); 
+  
+  rtlreg_t t0 = 1;
+  rtl_sub(&id_dest->val, &id_dest->val, &t0);
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
+
+  rtlreg_t tof = (!dest_s && src_s && cpu.SF) || (dest_s && !src_s && !cpu.SF); //011 100
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
+  operand_write(id_dest, &id_dest->val);
 
   print_asm_template1(dec);
 }
 
 make_EHelper(neg) {
-  TODO();
+
+  rtlreg_t t0  = 0;
+  rtlreg_t tcf = 0 != id_dest;
+  int dest_s  = id_dest->val >> (id_dest->width*8 - 1); 
+
+  rtl_sub(&id_dest->val, &t0, &id_dest->val);
+  rtl_update_ZFSF(&id_dest->val, id_dest->width);
+  rtlreg_t tof = !(dest_s ^ cpu.SF); //11
+  rtl_set_CF(&tcf);
+  rtl_set_OF(&tof);
+  operand_write(id_dest, &id_dest->val);
 
   print_asm_template1(neg);
 }
@@ -107,6 +190,8 @@ make_EHelper(mul) {
 
 // imul with one operand
 make_EHelper(imul1) {
+  //opcode : 
+  //0xf7  eax
   rtl_lr(&t0, R_EAX, id_dest->width);
   rtl_imul_lo(&t1, &id_dest->val, &t0);
 
@@ -132,6 +217,8 @@ make_EHelper(imul1) {
 
 // imul with two operands
 make_EHelper(imul2) {
+  //opcode : 
+  //0x0f+0xaf  Gv <- Ev
   rtl_sext(&t0, &id_src->val, id_src->width);
   rtl_sext(&t1, &id_dest->val, id_dest->width);
 

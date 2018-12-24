@@ -1,6 +1,6 @@
 #ifndef __CPU_RTL_H__
 #define __CPU_RTL_H__
-
+#define FLAG "cpu."
 #include "nemu.h"
 #include "util/c_op.h"
 #include "cpu/relop.h"
@@ -33,16 +33,16 @@ static inline void interpret_rtl_mv(rtlreg_t* dest, const rtlreg_t *src1) {
   }
 
 make_rtl_arith_logic(add)
-make_rtl_arith_logic(sub)
+make_rtl_arith_logic(sub)    
 make_rtl_arith_logic(and)
 make_rtl_arith_logic(or)
 make_rtl_arith_logic(xor)
 make_rtl_arith_logic(shl)
 make_rtl_arith_logic(shr)
 make_rtl_arith_logic(sar)
-make_rtl_arith_logic(mul_lo)
+make_rtl_arith_logic(mul_lo)  
 make_rtl_arith_logic(mul_hi)
-make_rtl_arith_logic(imul_lo)
+make_rtl_arith_logic(imul_lo) 
 make_rtl_arith_logic(imul_hi)
 make_rtl_arith_logic(div_q)
 make_rtl_arith_logic(div_r)
@@ -104,7 +104,7 @@ static inline void interpret_rtl_host_sm(void *addr, const rtlreg_t *src1, int l
 }
 
 static inline void interpret_rtl_setrelop(uint32_t relop, rtlreg_t *dest,
-    const rtlreg_t *src1, const rtlreg_t *src2) {
+  const rtlreg_t *src1, const rtlreg_t *src2) {
   *dest = interpret_relop(relop, *src1, *src2);
 }
 
@@ -150,24 +150,35 @@ static inline void rtl_sr(int r, const rtlreg_t* src1, int width) {
 
 static inline void rtl_not(rtlreg_t *dest, const rtlreg_t* src1) {
   // dest <- ~src1
-  TODO();
+  //TODO();
+  *dest = ~*src1;
 }
 
 static inline void rtl_sext(rtlreg_t* dest, const rtlreg_t* src1, int width) {
   // dest <- signext(src1[(width * 8 - 1) .. 0])
-  TODO();
+  //TODO();
+  *dest = (((int)*src1)<<(32 - width * 8)) >> (32 - width * 8);
 }
 
 static inline void rtl_push(const rtlreg_t* src1) {
   // esp <- esp - 4
   // M[esp] <- src1
-  TODO();
+  //TODO();
+  //if(decoding.is_operand_size_16)
+  //  TODO();
+  cpu.esp -= 4;
+  rtl_sm(&cpu.esp, src1, 4); 
+  //Log("When pushing in: 0x%x, at 0x%x\n", *src1, cpu.esp);
 }
 
 static inline void rtl_pop(rtlreg_t* dest) {
   // dest <- M[esp]
   // esp <- esp + 4
-  TODO();
+  //TODO();
+
+  rtl_lm(dest, &cpu.esp, 4);
+  //Log("When poping out: 0x%x, at 0x%x\n", *dest, cpu.esp);
+  cpu.esp += 4;
 }
 
 static inline void rtl_setrelopi(uint32_t relop, rtlreg_t *dest,
@@ -178,15 +189,16 @@ static inline void rtl_setrelopi(uint32_t relop, rtlreg_t *dest,
 
 static inline void rtl_msb(rtlreg_t* dest, const rtlreg_t* src1, int width) {
   // dest <- src1[width * 8 - 1]
-  TODO();
+  //TODO();
+  *dest = *src1 >> (width * 8 - 1);
 }
 
 #define make_rtl_setget_eflags(f) \
   static inline void concat(rtl_set_, f) (const rtlreg_t* src) { \
-    TODO(); \
+    cpu.f = *src; \
   } \
   static inline void concat(rtl_get_, f) (rtlreg_t* dest) { \
-    TODO(); \
+    *dest = cpu.f; \
   }
 
 make_rtl_setget_eflags(CF)
@@ -196,12 +208,14 @@ make_rtl_setget_eflags(SF)
 
 static inline void rtl_update_ZF(const rtlreg_t* result, int width) {
   // eflags.ZF <- is_zero(result[width * 8 - 1 .. 0])
-  TODO();
+  //TODO();
+  cpu.ZF = *result << (32 - width*8) ? 0 : 1;
 }
 
 static inline void rtl_update_SF(const rtlreg_t* result, int width) {
   // eflags.SF <- is_sign(result[width * 8 - 1 .. 0])
-  TODO();
+  //TODO();
+  cpu.SF  = *result >> (width*8 - 1);  
 }
 
 static inline void rtl_update_ZFSF(const rtlreg_t* result, int width) {

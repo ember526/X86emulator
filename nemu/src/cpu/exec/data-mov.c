@@ -6,14 +6,23 @@ make_EHelper(mov) {
 }
 
 make_EHelper(push) {
-  TODO();
-
+  //TODO();
+  //switch (decoding.opcode) {
+  //  case 0x50 ... 0x57: rtl_push(&id_dest->val); break;
+  //  case 0xFF         : rtl_push(&id_dest->val); break;  
+  //  case 0x63         : rtl_push(&id_dest->val); break;   
+  //  case 0x68         : rtl_push(&id_dest->val); break;
+  //  case 0x6a         : rtl_push(&id_dest->val); break;
+  //}
+  if (decoding.opcode==0x6a)
+    rtl_sext(&id_dest->val, &id_dest->val, id_dest->width);
+  rtl_push(&id_dest->val);
   print_asm_template1(push);
 }
 
 make_EHelper(pop) {
-  TODO();
-
+  //TODO();
+  rtl_pop(&cpu.gpr[id_dest->reg]._32);
   print_asm_template1(pop);
 }
 
@@ -30,17 +39,23 @@ make_EHelper(popa) {
 }
 
 make_EHelper(leave) {
-  TODO();
+  if (decoding.is_operand_size_16) {
+    TODO();
+  }
+  else {
+    cpu.esp = cpu.ebp;
+    rtl_pop(&cpu.ebp);
+  }
 
   print_asm("leave");
 }
 
 make_EHelper(cltd) {
   if (decoding.is_operand_size_16) {
-    TODO();
+    cpu.gpr[R_DX]._16 = cpu.gpr[R_AX]._16 < 0 ? 0xffff : 0; 
   }
   else {
-    TODO();
+    cpu.gpr[R_EDX]._32 = cpu.gpr[R_EAX]._32 < 0 ? 0xffffffff : 0; 
   }
 
   print_asm(decoding.is_operand_size_16 ? "cwtl" : "cltd");
@@ -48,10 +63,10 @@ make_EHelper(cltd) {
 
 make_EHelper(cwtl) {
   if (decoding.is_operand_size_16) {
-    TODO();
+    rtl_sext(&cpu.gpr[R_AX]._32, &cpu.gpr[R_AL]._32, 1);
   }
   else {
-    TODO();
+    rtl_sext(&cpu.gpr[R_EAX]._32, &cpu.gpr[R_AX]._32, 2);
   }
 
   print_asm(decoding.is_operand_size_16 ? "cbtw" : "cwtl");

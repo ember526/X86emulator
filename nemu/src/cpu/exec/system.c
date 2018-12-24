@@ -1,5 +1,5 @@
 #include "cpu/exec.h"
-
+#include "device/port-io.h"
 void difftest_skip_ref();
 void difftest_skip_dut();
 
@@ -42,8 +42,12 @@ make_EHelper(iret) {
 }
 
 make_EHelper(in) {
-  TODO();
-
+  switch (decoding.opcode) {
+    case 0xec : id_dest->val = pio_read_b(id_src->val); break;
+    case 0xed : if(decoding.is_operand_size_16)TODO(); else id_dest->val = pio_read_l(id_src->val); break;
+    default :TODO();
+  }
+  operand_write(id_dest, &id_dest->val);
   print_asm_template2(in);
 
 #if defined(DIFF_TEST)
@@ -52,7 +56,11 @@ make_EHelper(in) {
 }
 
 make_EHelper(out) {
-  TODO();
+  switch (decoding.opcode) {
+    case 0xee : pio_write_b(id_dest->val, id_src->val); break;
+    default :TODO();
+  }
+  
 
   print_asm_template2(out);
 

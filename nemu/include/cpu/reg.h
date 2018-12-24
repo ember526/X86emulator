@@ -33,7 +33,17 @@ typedef struct {
   };
 
   vaddr_t eip;
-
+  union{
+    struct{
+      uint32_t CF:  1;
+      uint32_t ZF:  1;
+      uint32_t SF:  1;
+      uint32_t IF:  1;
+      uint32_t OF:  1;
+      uint32_t   :  27;
+      };
+    uint32_t eflags;
+  };
 } CPU_state;
 
 extern CPU_state cpu;
@@ -59,6 +69,20 @@ static inline const char* reg_name(int index, int width) {
     case 2: return regsw[index];
     default: assert(0);
   }
+}
+
+static inline const uint32_t reg_content(char * reg_name) {
+  if(!strcmp(reg_name, "eax")) return cpu.eax;
+  if(!strcmp(reg_name, "ecx")) return cpu.ecx;
+  if(!strcmp(reg_name, "edx")) return cpu.edx;
+  if(!strcmp(reg_name, "ebx")) return cpu.ebx;
+  if(!strcmp(reg_name, "esp")) return cpu.esp;
+  if(!strcmp(reg_name, "ebp")) return cpu.ebp;
+  if(!strcmp(reg_name, "esi")) return cpu.esi;
+  if(!strcmp(reg_name, "edi")) return cpu.edi;
+  if(!strcmp(reg_name, "eip")) return cpu.eip;
+  assert(0);
+  return 0;
 }
 
 #endif
