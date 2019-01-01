@@ -163,7 +163,7 @@ static int cmd_x(char *args) {
   }
   for (int i = 0; i < N; ++i) {
     int content = vaddr_read(addr + i * 4, 4);//pmem[base] + (pmem[base+1]<<8) + (pmem[base+2]<<16) + (pmem[base+3]<<24); 
-    printf("0x%-10x\t0x%-10.8x\t%-20d%c%c%c%c\n", addr+i, content, content, ((char *)&content)[0], ((char *)&content)[1], ((char *)&content)[2], ((char *)&content)[3]);
+    printf("0x%-10x\t0x%-10.8x\t%-20d%c%c%c%c\n", addr+i*4, content, content, ((char *)&content)[0], ((char *)&content)[1], ((char *)&content)[2], ((char *)&content)[3]);
   }
   return 0;
   //printf("%d %x\n", N, addr);

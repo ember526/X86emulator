@@ -27,13 +27,37 @@ make_EHelper(pop) {
 }
 
 make_EHelper(pusha) {
-  TODO();
-
+  if (decoding.is_operand_size_16) {
+    TODO();
+  }
+  else {
+    t0 = cpu.esp;
+    rtl_push(&cpu.eax);
+    rtl_push(&cpu.ecx);
+    rtl_push(&cpu.edx);
+    rtl_push(&cpu.ebx);
+    rtl_push(&t0);
+    rtl_push(&cpu.ebp);
+    rtl_push(&cpu.esi);
+    rtl_push(&cpu.edi);
+  }
   print_asm("pusha");
 }
 
 make_EHelper(popa) {
-  TODO();
+  if (decoding.is_operand_size_16) {
+    TODO();
+  }
+  else {
+    rtl_pop(&cpu.edi);
+    rtl_pop(&cpu.esi);
+    rtl_pop(&cpu.ebp);
+    rtl_pop(&t0);
+    rtl_pop(&cpu.ebx);
+    rtl_pop(&cpu.edx);
+    rtl_pop(&cpu.ecx);
+    rtl_pop(&cpu.eax);
+  }
 
   print_asm("popa");
 }
@@ -88,4 +112,12 @@ make_EHelper(movzx) {
 make_EHelper(lea) {
   operand_write(id_dest, &id_src->addr);
   print_asm_template2(lea);
+}
+
+make_EHelper(stos) {
+  id_src->width = decoding.is_operand_size_16 ? 2 : 4;
+  operand_write(id_dest, &id_src->val);
+  id_src->val += 2;
+  operand_write(id_src, &id_src->val);
+  print_asm_template2(stos);
 }

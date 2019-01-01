@@ -328,6 +328,52 @@ make_DHelper(out_a2dx) {
 #endif
 }
 
+make_DHelper(eAX2Y) {
+  decode_op_a(eip, id_src, true);
+  id_dest->type = OP_TYPE_MEM;
+  id_dest->reg = R_EDI;
+  id_dest->width = 4;
+  rtl_lr(&id_dest->val, R_EDI, 4);
+#ifdef DEBUG
+  sprintf(id_dest->str, "DHelper STOS");
+#endif
+}
+
+make_DHelper(mov_r2cr) {
+  ModR_M m;
+  m.val = instr_fetch(eip, 1);
+
+  assert(m.mod == 3);
+  id_src->type = OP_TYPE_REG;
+  id_src->reg = m.R_M;
+  rtl_lr(&id_src->val, m.R_M, 4);
+
+  id_dest->reg = m.opcode;
+
+
+  #ifdef DEBUG
+  sprintf(id_dest->str, "DHelper mov_r2cr");
+  #endif
+}
+
+make_DHelper(mov_cr2r) {
+
+  ModR_M m;
+  m.val = instr_fetch(eip, 1);
+  id_src->reg = m.opcode;
+  assert(m.opcode == 0 || m.opcode == 3);
+  id_src->val = m.opcode == 0 ? cpu.cr0.val : cpu.cr3;
+
+  assert(m.mod == 3);
+  id_dest->type = OP_TYPE_REG;
+  id_dest->reg = m.R_M;
+
+  #ifdef DEBUG
+  sprintf(id_dest->str, "DHelper mov_cr2r");
+  #endif
+}
+
+
 void operand_write(Operand *op, rtlreg_t* src) {
   if (op->type == OP_TYPE_REG) { rtl_sr(op->reg, src, op->width); }
   else if (op->type == OP_TYPE_MEM) { rtl_sm(&op->addr, src, op->width); }

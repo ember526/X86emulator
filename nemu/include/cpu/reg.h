@@ -36,14 +36,34 @@ typedef struct {
   union{
     struct{
       uint32_t CF:  1;
+      uint32_t   :  5;
       uint32_t ZF:  1;
       uint32_t SF:  1;
+      uint32_t   :  1;
       uint32_t IF:  1;
+      uint32_t   :  1;
       uint32_t OF:  1;
-      uint32_t   :  27;
+      uint32_t   :  20;
       };
     uint32_t eflags;
   };
+  uint16_t CS;
+  struct IDTR {
+    uint32_t base;
+    uint16_t limit;
+  }idtr;
+
+  union {
+    struct {
+      uint32_t protect_enable      : 1;
+      uint32_t dont_care           : 30;
+      uint32_t paging              : 1;
+    };
+    uint32_t val;
+  } cr0;
+
+  uint32_t cr3;
+  bool intr;
 } CPU_state;
 
 extern CPU_state cpu;

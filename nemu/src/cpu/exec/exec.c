@@ -12,7 +12,7 @@ typedef struct {
 #define EXW(ex, w)         {NULL, concat(exec_, ex), w}
 #define EX(ex)             EXW(ex, 0)
 #define EMPTY              EX(inv)
-
+#define IRQ_TIMER 32
 static inline void set_width(int width) {
   if (width == 0) {
     width = decoding.is_operand_size_16 ? 2 : 4;
@@ -66,26 +66,26 @@ make_group(gp5,
 
   /* 0x0f 0x01*/
 make_group(gp7,
-    EMPTY, EMPTY, EMPTY, EMPTY,
+    EMPTY, EMPTY, EMPTY, EX(lidt),
     EMPTY, EMPTY, EMPTY, EMPTY)
 
 /* TODO: Add more instructions!!! */
 
 opcode_entry opcode_table [512] = {
   /* 0x00 */	IDEXW(G2E, add, 1), IDEX(G2E, add), IDEXW(E2G, add, 1), IDEX(E2G, add),
-  /* 0x04 */	EMPTY, IDEX(I2a, add), EMPTY, EMPTY,
+  /* 0x04 */	IDEXW(I2a, add, 1), IDEX(I2a, add), EMPTY, EMPTY,
   /* 0x08 */	IDEXW(G2E, or, 1), IDEX(G2E, or), IDEXW(E2G, or, 1), IDEX(E2G, or),
-  /* 0x0c */	EMPTY, IDEX(I2a, or), EMPTY, EX(2byte_esc),
+  /* 0x0c */	IDEXW(I2a, or, 1), IDEX(I2a, or), EMPTY, EX(2byte_esc),
   /* 0x10 */	IDEXW(G2E, adc, 1), IDEX(G2E, adc), IDEXW(E2G, adc, 1), IDEX(E2G, adc),
-  /* 0x14 */	EMPTY, IDEX(I2a, adc), EMPTY, EMPTY,
+  /* 0x14 */	IDEXW(I2a, adc, 1), IDEX(I2a, adc), EMPTY, EMPTY,
   /* 0x18 */	IDEXW(G2E, sbb, 1), IDEX(G2E, sbb), IDEXW(E2G, sbb, 1), IDEX(E2G, sbb),
-  /* 0x1c */	EMPTY, IDEX(I2a, sbb), EMPTY, EMPTY,
+  /* 0x1c */	IDEXW(I2a, sbb, 1), IDEX(I2a, sbb), EMPTY, EMPTY,
   /* 0x20 */	IDEXW(G2E, and, 1), IDEX(G2E, and), IDEXW(E2G, and, 1), IDEX(E2G, and),
-  /* 0x24 */	EMPTY, IDEX(I2a, and), EMPTY, EMPTY,
+  /* 0x24 */	IDEXW(I2a, and, 1), IDEX(I2a, and), EMPTY, EMPTY,
   /* 0x28 */	IDEXW(G2E, cmp, 1), IDEX(G2E, sub), IDEXW(E2G, sub, 1), IDEX(E2G, sub),
-  /* 0x2c */	EMPTY, IDEX(I2a, cmp), EMPTY, EMPTY,
+  /* 0x2c */	IDEXW(I2a, cmp, 1), IDEX(I2a, cmp), EMPTY, EMPTY,
   /* 0x30 */	IDEXW(G2E, xor, 1), IDEX(G2E, xor), IDEXW(E2G, xor, 1), IDEX(E2G, xor),
-  /* 0x34 */	EMPTY, IDEX(I2a, xor), EMPTY, EMPTY,
+  /* 0x34 */	IDEXW(I2a, xor, 1), IDEX(I2a, xor), EMPTY, EMPTY,
   /* 0x38 */	IDEXW(G2E, cmp, 1), IDEX(G2E, cmp), IDEXW(E2G, cmp, 1), IDEX(E2G, cmp),
   /* 0x3c */	IDEXW(I2a, cmp, 1), IDEX(I2a, cmp), EMPTY, EMPTY,
   /* 0x40 */	IDEX(r, inc), IDEX(r, inc), IDEX(r, inc), IDEX(r, inc),
@@ -96,7 +96,7 @@ opcode_entry opcode_table [512] = {
   /* 0x54 */	IDEX(r, push), IDEX(r, push), IDEX(r, push), IDEX(r, push),
   /* 0x58 */	IDEX(r,  pop), IDEX(r,  pop), IDEX(r,  pop), IDEX(r,  pop),
   /* 0x5c */	IDEX(r,  pop), IDEX(r,  pop), IDEX(r,  pop), IDEX(r,  pop),
-  /* 0x60 */	EMPTY, EMPTY, EMPTY, EMPTY,
+  /* 0x60 */	EX(pusha), EX(popa), EMPTY, EMPTY,
   /* 0x64 */	EMPTY, EMPTY, EX(operand_size), EMPTY,
   /* 0x68 */	IDEX(I, push), EMPTY, IDEXW(I, push, 1), EMPTY,
   /* 0x6c */	EMPTY, EMPTY, EMPTY, EMPTY,
@@ -114,7 +114,7 @@ opcode_entry opcode_table [512] = {
   /* 0x9c */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0xa0 */	IDEXW(O2a, mov, 1), IDEX(O2a, mov), IDEXW(a2O, mov, 1), IDEX(a2O, mov),
   /* 0xa4 */	EMPTY, EMPTY, EMPTY, EMPTY,
-  /* 0xa8 */	IDEXW(I2a, test, 1), EMPTY, EMPTY, EMPTY,
+  /* 0xa8 */	IDEXW(I2a, test, 1), IDEX(I2a, test), EMPTY, IDEX(eAX2Y, stos),
   /* 0xac */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0xb0 */	IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1),
   /* 0xb4 */	IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1), IDEXW(mov_I2r, mov, 1),
@@ -123,7 +123,7 @@ opcode_entry opcode_table [512] = {
   /* 0xc0 */	IDEXW(gp2_Ib2E, gp2, 1), IDEX(gp2_Ib2E, gp2), EMPTY, EX(ret),
   /* 0xc4 */	EMPTY, EMPTY, IDEXW(mov_I2E, mov, 1), IDEX(mov_I2E, mov),
   /* 0xc8 */	EMPTY, EX(leave), EMPTY, EMPTY,
-  /* 0xcc */	EMPTY, EMPTY, EMPTY, EMPTY,
+  /* 0xcc */	EMPTY, IDEXW(I, int, 1), EMPTY, EX(iret),
   /* 0xd0 */	IDEXW(gp2_1_E, gp2, 1), IDEX(gp2_1_E, gp2), IDEXW(gp2_cl2E, gp2, 1), IDEX(gp2_cl2E, gp2),
   /* 0xd4 */	EMPTY, EMPTY, EX(nemu_trap), EMPTY,
   /* 0xd8 */	EMPTY, EMPTY, EMPTY, EMPTY,
@@ -147,7 +147,7 @@ opcode_entry opcode_table [512] = {
   /* 0x14 */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0x18 */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0x1c */	EMPTY, EMPTY, EMPTY, EMPTY,
-  /* 0x20 */	EMPTY, EMPTY, EMPTY, EMPTY,
+  /* 0x20 */	IDEX(mov_cr2r, mov_cr2r), EMPTY, IDEX(mov_r2cr, mov_r2cr), EMPTY,
   /* 0x24 */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0x28 */	EMPTY, EMPTY, EMPTY, EMPTY,
   /* 0x2c */	EMPTY, EMPTY, EMPTY, EMPTY,
@@ -252,4 +252,9 @@ void exec_wrapper(bool print_flag) {
   void difftest_step(uint32_t);
   difftest_step(ori_eip);
 #endif
+  if (cpu.intr & cpu.IF) {
+    cpu.intr = false;
+    raise_intr(IRQ_TIMER, cpu.eip);
+    update_eip();
+  }
 }
